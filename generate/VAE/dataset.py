@@ -6,8 +6,8 @@ def dataloader(batch_size=128, num_works=0):
         transforms.ToTensor(),
     ])
 
-    mnist_train = datasets.MNIST('minist', train=True, transform=transform, download=True)
-    mnist_test = datasets.MNIST('minist', train=False, transform=transform, download=True)
+    mnist_train = datasets.MNIST('./minist', train=True, transform=transform, download=True)
+    mnist_test = datasets.MNIST('./minist', train=False, transform=transform, download=True)
 
     mnist_train = DataLoader(mnist_train, batch_size=batch_size, shuffle=True)
     mnist_test = DataLoader(mnist_test, batch_size=batch_size, shuffle=True)
